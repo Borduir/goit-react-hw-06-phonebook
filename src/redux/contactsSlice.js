@@ -9,20 +9,9 @@ export const contactsSlice = createSlice({
     },
 
     deleteContact(state, action) {
-      // return state.contacts.filter(
-      //   filterContact => filterContact.id !== action.payload
-      // );
-      if (
-        state.contacts.filter(
-          filterContact => filterContact.id !== action.payload
-        ) === []
-      ) {
-        state.contacts = [];
-      } else {
-        state.contacts = state.contacts.filter(
-          filterContact => filterContact.id !== action.payload
-        );
-      }
+      state.contacts = state.contacts.filter(
+        filterContact => filterContact.id !== action.payload
+      );
     },
   },
 });
