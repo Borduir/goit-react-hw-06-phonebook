@@ -14,7 +14,6 @@ export function App() {
 
   const checkIfContactExist = (name, number) => {
     if (
-      contacts &&
       !contacts.find(
         contact => contact.name.toLowerCase() === name.toLowerCase()
       )
@@ -26,11 +25,9 @@ export function App() {
   };
 
   const createFilteredList = () => {
-    if (contacts) {
-      return contacts.filter(contact =>
-        contact.name.toLowerCase().includes(`${filtre.toLowerCase()}`)
-      );
-    }
+    return contacts.filter(contact =>
+      contact.name.toLowerCase().includes(`${filtre.toLowerCase()}`)
+    );
   };
 
   return (
